@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="TestWingman.Views.LegendDetailsPage"
+             Title="LegendDetailsPage">
+    <VerticalStackLayout>
+        <Image Source="{Binding Metadata.bgImageUrl}"
+               HeightRequest="400"
+               />
+        <Label Text="{Binding Metadata.Name}"
+               TextColor="{Binding Metadata.legendColor}"
+               HorizontalTextAlignment="Start"
+               HorizontalOptions="Center"
+               FontFamily="Expressway"
+               FontSize="Header"
+               />
+        <Grid HorizontalOptions="Center"
+              RowDefinitions="400"
+              ColumnDefinitions="350, 350, 350"
+              Padding="50"
+              ColumnSpacing="100">
+
+            <Frame BorderColor="Gray"
+               CornerRadius="5"
+               Padding="1"
+               
+               Grid.Column="0">
+                <StackLayout>
+                    <Label Text="{Binding Stats.matchesPlayed.displayName}"
+                            HorizontalOptions="Center"
+                       FontSize="32"
+                       FontAttributes="Bold" />
+                    <BoxView Color="Red"
+                         HeightRequest="5"
+                          />
+                    <Label Text="{Binding Stats.matchesPlayed.value}"
+                               FontSize="25"
+                           Padding="10"
+                           FontAttributes="Bold"
+                           HorizontalOptions="Center"/>
+                </StackLayout>
+            </Frame>
+
+            <Frame BorderColor="Gray"
+               CornerRadius="5"
+               Padding="1"
+               
+                Grid.Column="1">
+                <StackLayout>
+                    <Label Text="{Binding Stats.kills.displayName}"
+                       HorizontalOptions="Center"
+                       FontSize="32"
+                       FontAttributes="Bold" />
+                    <BoxView Color="Red"
+                         HeightRequest="5"
+                         HorizontalOptions="Fill"/>
+                    <Label Text="{Binding Stats.kills.value}"
+                       FontSize="25"
+                           Padding="10"
+                           FontAttributes="Bold"
+                           HorizontalOptions="Center"/>
+                </StackLayout>
+
+            </Frame>
+            <Frame BorderColor="Gray"
+               CornerRadius="5"
+               Padding="1"
+               
+               Grid.Column="2">
+                <StackLayout>
+                    <Label Text="{Binding Stats.damage.displayName}"
+                           HorizontalOptions="Center"
+                       FontSize="32"
+                       FontAttributes="Bold"/>
+                    <BoxView Color="Red"
+                         HeightRequest="5"
+                          />
+                    <Label Text="{Binding Stats.damage.value}"
+                           FontSize="25"
+                           Padding="10"
+                           FontAttributes="Bold"
+                           HorizontalOptions="Center"/>
+                </StackLayout>
+
+            </Frame>
+        </Grid>
+    </VerticalStackLayout>
+</ContentPage>
